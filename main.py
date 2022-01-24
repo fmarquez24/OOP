@@ -14,10 +14,12 @@ class Item:
     def calculate_total_price(self):
         return self.price * self.quantity
 
+    def apply_discount(self):
+        self.price = self.price * self.pay_rate
+
 
 item1 = Item("phone", 100, 1)
 item2 = Item("Laptop", 1000, 3)
-
-print(Item.__dict__) # all the attributes for Class Level
-print(item1.__dict__) # All the attributes for Instance Level.
-
+item3 = Item("Cable", 10, 5)
+item4 = Item("Mouse", 50, 5)
+item5 = Item("Keyboard", 75, 5)
