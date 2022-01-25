@@ -2,7 +2,7 @@ import csv
 
 
 class Item:
-    pay_rate = 0.8  # The pay rate after 20% discount
+    pay_rate = 0.8 # The pay rate after 20% discount
     all = []
 
     def __init__(self, name: str, price: float, quantity=0):
@@ -33,12 +33,12 @@ class Item:
         for item in items:
             Item(
                 name=item.get('name'),
-                price=int(item.get('price')),
+                price=float(item.get('price')),
                 quantity=int(item.get('quantity')),
             )
 
     def __repr__(self):
-        return f"Item('{self.name}','{self.price}', '{self.quantity}')"
+        return f"Item('{self.name}', {self.price}, {self.quantity})"
 
 
 Item.instantiate_from_csv()
