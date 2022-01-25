@@ -33,8 +33,8 @@ class Item:
         for item in items:
             Item(
                 name=item.get('name'),
-                price=item.get('price'),
-                quantity=item.get('quantity'),
+                price=float(item.get('price')),
+                quantity=int(item.get('quantity')),
             )
 
     def __repr__(self):
