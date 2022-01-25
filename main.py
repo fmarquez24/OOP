@@ -16,6 +16,7 @@ class Item:
         # Actions to execute
         Item.all.append(self)
 
+
     def calculate_total_price(self):
         return self.price * self.quantity
 
@@ -37,7 +38,6 @@ class Item:
 
     def __repr__(self):
         return f"Item('{self.name}', {self.price}, {self.quantity})"
-
 
 Item.instantiate_from_csv()
 print(Item.all)
