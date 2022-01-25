@@ -2,13 +2,13 @@ import csv
 
 
 class Item:
-    pay_rate = 0.8  # the pay rate after 20 % discount
+    pay_rate = 0.8  # The pay rate after 20% discount
     all = []
 
     def __init__(self, name: str, price: float, quantity=0):
         # Run validations to the received arguments
         assert price >= 0, f"Price {price} is not greater than or equal to zero!"
-        assert quantity >= 0, f"Price {price} is not greater than or equal to zero!"
+        assert quantity >= 0, f"Quantity {quantity} is not greater or equal to zero!"
 
         # Assign to self object
         self.name = name
@@ -33,8 +33,8 @@ class Item:
         for item in items:
             Item(
                 name=item.get('name'),
-                price=item.get('price'),
-                quantity=item.get('quantity'),
+                price=int(item.get('price')),
+                quantity=int(item.get('quantity')),
             )
 
     def __repr__(self):
