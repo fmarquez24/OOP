@@ -5,17 +5,27 @@ class Item:
     all = []
 
     def __init__(self, name: str, price: float, quantity=0):
+
+
         # Run validations to the received arguments
         assert price >= 0, f"Price {price} is not greater than or equal to zero!"
         assert quantity >= 0, f"Quantity {quantity} is not greater or equal to zero!"
 
         # Assign to self object
-        self.name = name
+        self.__name = name
         self.price = price
         self.quantity = quantity
 
         # Actions to execute
         Item.all.append(self)
+
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, value):
+        self.__name = value
 
     def calculate_total_price(self):
         return self.price * self.quantity
